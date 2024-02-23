@@ -3,18 +3,37 @@
 
 <head>
     <title>Money Page</title>
-        <style>
-            .image-row{
-                display: flex;
-                max-width: 50px;
-                
-            }
-            .col {
-                
-                margin-right:5px;
-                overflow: hidden;
-            }
-        </style>
+    <style>
+        .flex-container {
+          display: flex;  flex-direction:row;
+          background-color: red;
+      }
+    
+    .flex-container > div {  /*div children of the flex container*/
+      background-color: #f1f1f1; 
+      margin: 10px;  padding: 20px;  font-size: 30px;
+    }
+    
+    /* Responsive layout */
+    @media (max-width: 600px) { 
+         .flex-container{
+             flex-direction:column;
+             background-color: green;
+          }
+        }
+        .image-row {
+            display: flex;
+            max-width: 50px;
+
+        }
+
+        .location {
+
+            margin-right: 5px;
+            overflow: hidden;
+        }
+    </style>
+    
 </head>
 
 <body>
@@ -24,7 +43,6 @@
     <p id="score" style="color: blueviolet;background-color: honeydew;">Score is zero.</p>
     <p style="color: darkblue;background-color: gold;">Click for help</p>
     <p id="help" style="color: green;background-color: blanchedalmond;">Help report</p>
-    
 
     <div class="container">
         <div class="image-row d-flex justify-content-center">
