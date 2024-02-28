@@ -10,6 +10,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
 <body>
     <h1>Keerthi Kamidi speed check</h1>
     <div id="target">Your time</div>
@@ -22,23 +23,23 @@
             reactTime = Date.now();
             console.log("Stop Time: " + stopTime);
         }
-        function startTimer(){
-            for (let i = 0; i < 5; i++) {
-                setTimeout(() => {
-                    document.getElementById('counter').innerHTML ="Count "+ i;
-                }, (4 - i) * 1000);
-            }
-
-            setTimeout(() => {
-                if (reactTime === undefined) {
-                    document.getElementById('target').innerHTML = "Too Slow";
-                } else {
-                    let stopTime = Date.now()
-                    elapsedTime=stopTime-reactTime
-                    document.getElementById('target').innerHTML = "Time was " + elapsedTime 
+        function startTimer() {
+            let countDown = Math.floor(Math.random() * 9) + 2;
+                for (let i = 0; i < 5; i++) {
+                    setTimeout(() => {
+                        document.getElementById('counter').innerHTML = "Count " + i;
+                    }, (4 - i) * 1000);
                 }
-            }, 4000);
-        }
+                setTimeout(() => {
+                    if (reactTime === undefined) {
+                        document.getElementById('target').innerHTML = "Too Slow";
+                    } else {
+                        let stopTime = Date.now()
+                        elapsedTime = stopTime - reactTime
+                        document.getElementById('target').innerHTML = "Time was " + elapsedTime
+                    }
+                }, countDown*1000 + 4000);
+            }
     </script>
 
 
