@@ -160,6 +160,25 @@
                 document.getElementById("help").innerHTML = "All clear";
             }
         }
+        function newGame() {
+            game = false;
+            score = 0;
+            locations = 0;
+            let set = document.getElementsByTagName("img");
+            for (i = 0; i < set.length; i++) {
+                set[i].src = "Building.jpg"
+            }
+
+            monsterLocation = Math.floor(Math.random() * 34);
+            for (i = 0; i < fancyCoinLocation.length; i++) {
+                fancyCoinLocation[i] = Math.floor(Math.random() * 34);
+            }
+
+            document.getElementById("score").innerHTML = `score is : ${score}`;
+            document.getElementById("locations").innerHTML = `score is : ${locations}`;
+            document.getElementById("button").onclick = newGame;
+        }
+
         
     </script>
 
